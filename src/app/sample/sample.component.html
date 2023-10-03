@@ -1,0 +1,28 @@
+<div *ngFor="let item of items">
+    <ng-container *ngTemplateOutlet="itemTemplate; context: { $implicit: item }"></ng-container>
+
+    <ng-template #itemTemplate let-item>
+        <div class="item-header">
+            <ng-container *ngTemplateOutlet="headerTemplate"></ng-container>
+        </div>
+        <div class="item-body">
+            <ng-container *ngTemplateOutlet="bodyTemplate"></ng-container>
+        </div>
+        <div class="item-footer">
+            <ng-container *ngTemplateOutlet="footerTemplate"></ng-container>
+        </div>
+    </ng-template>
+
+    <ng-template #headerTemplate>
+        <h2>{{ item.name }}</h2>
+    </ng-template>
+
+    <ng-template #bodyTemplate>
+        <p>{{ item.description }}</p>
+    </ng-template>
+
+    <ng-template #footerTemplate>
+        <button class="btn btn-primary ms-2">Edit</button>
+        <button class="btn btn-danger ms-2">Delete</button>
+    </ng-template>
+</div>

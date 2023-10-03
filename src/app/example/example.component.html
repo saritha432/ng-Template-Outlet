@@ -1,0 +1,23 @@
+
+
+<ng-template #myTemplate let-name="name">
+    <h1>{{name}}</h1>
+  </ng-template>
+
+  <div>
+    <ng-container *ngTemplateOutlet="myTemplate; context: { name: 'Alice' }"></ng-container>
+    <ng-container *ngTemplateOutlet="myTemplate; context: { name: 'Bob' }"></ng-container>
+    <ng-container *ngTemplateOutlet="myTemplate; context: { name: 'Charlie' }"></ng-container>
+  </div>
+  
+
+  
+  <ng-template let-message="message" #mavericks >
+    <p>{{message}}</p>  
+</ng-template>
+<div *ngTemplateOutlet="mavericks; context:{message: 'This is an angular template partial'}">
+</div>
+
+  
+
+
